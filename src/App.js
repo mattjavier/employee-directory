@@ -1,46 +1,73 @@
-import React, { useState, useEffect, useMemo } from 'react'
+import React, { useState, useEffect } from 'react'
 import axios from 'axios'
-import Table from './components/Table'
+import 'react-table-v6/react-table.css'
+import ReactTable from 'react-table-v6'
+
 
 const App = () => {
 
   const [employeeState, setEmployeeState] = useState({
-    employees: []
-  })
-
-  useEffect(() => {
-    axios.get('https://randomuser.me/api?results=20')
-      .then(({ data }) => {
-        setEmployeeState({ ...employeeState, employees: data.results })
-      })
-      .catch(err => console.error(err))
-  }, [])
-
-  const data = employeeState.employees
-  const columns = useMemo(
-    () => [
+    employees: [],
+    columns: [
       {
         Header: 'Employee',
         columns: [
           {
             Header: 'First Name',
-            accessor: 'name.first',
+            accessor: 'first',
           },
           {
             Header: 'Last Name',
-            accessor: 'name.last'
+            accessor: 'last'
           }
         ]
       },
-    ],
-    []
-  )
+      {
+        Header: 'Information',
+        columns: [
+          {
+            Header: 'Email',
+            accessor: 'email'
+          },
+          {
+            Header: 'City',
+            accessor: 'city'
+          },
+          {
+            Header: 'State',
+            accessor: 'state',
+          },
+          {
+            Header: 'Country',
+            accessor: 'country'
+          }
+        ]
+      }
+    ]
+  })
 
-  console.log(data)
+  useEffect(() => {
+    axios.get('https://randomuser.me/api?results=20')
+      .then(({ data }) => {
+
+        let employees = data.results.map(employee => ({
+          first: employee.name.first,
+          last: employee.name.last,
+          email: employee.email,
+          city: employee.location.city,
+          state: employee.location.state,
+          country: employee.location.country
+        }))
+
+        setEmployeeState({ ...employeeState, employees })
+      })
+      .catch(err => console.error(err))
+  }, [])
+
   return (
-    <>
-      <Table columns={columns} data={data} />
-    </>
+    <div className="container">
+      <ReactTable columns={employeeState.columns} data={employeeState.employees} />
+    </div>
   )
 }
 
