@@ -30,6 +30,11 @@ const App = () => {
             accessor: 'email'
           },
           {
+            Header: 'Gender',
+            accessor: 'gender',
+            sortable: false,
+          },
+          {
             Header: 'City',
             accessor: 'city'
           },
@@ -54,6 +59,7 @@ const App = () => {
           first: employee.name.first,
           last: employee.name.last,
           email: employee.email,
+          gender: employee.gender,
           city: employee.location.city,
           state: employee.location.state,
           country: employee.location.country
@@ -66,7 +72,7 @@ const App = () => {
 
   return (
     <div className="container">
-      <ReactTable columns={employeeState.columns} data={employeeState.employees} />
+      <ReactTable columns={employeeState.columns} data={employeeState.employees} filterable />
     </div>
   )
 }

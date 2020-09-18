@@ -1,68 +1,29 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Employee Directory
 
-## Available Scripts
+This application allows users to view a number of employees and be able to sort and filter the list of employees by any number of options.
 
-In the project directory, you can run:
+It was built using React, along with the npm [React Table](https://www.npmjs.com/package/react-table-v6), and styled using Bootstrap. 
 
-### `npm start`
+## Testing 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+The application is deployed [here](). 
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+Users are presented with a table that shows a number of employees. Each employee's first and last name, email, gender, city, state, and country is provided as columns of the table. A user can sort each column, with the exception of the `Gender` column. To sort, click the header for the chosen column. The application initially has all columns unsorted. By clicking a header, the table will be first sorted in ascending order, alphabetically, and clicking again will sort the table according to that column in descending order. 
 
-### `npm test`
+Each column is also filterable, with a text input field given below each header. This allows the user to search for an employee using the given fields. For example, typing "m" in the `Gender` field will filter out any employee that is a female. 
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+When launched, the application will return 20 employees. At the bottom of the table is an option to show less than 20 rows. If that's the case, then `Previous` and `Next` buttons become active to allow a user to paginate through the table.
 
-### `npm run build`
+## Images
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+* The start of the application
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+<img src="" width="500">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+* Sorting in ascending order by email
 
-### `npm run eject`
+<img src="" width="500">
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+* Filtering by gender
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+<img src="" width="500"> 
