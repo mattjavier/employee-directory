@@ -18,12 +18,12 @@ When launched, the application will return 20 employees. At the bottom of the ta
 
 * The start of the application
 
-<img src="" width="500">
+<img src="./images/start.png" width="500">
 
 * Sorting in ascending order by email
 
-<img src="" width="500">
+<img src="./images/sort.png" width="500">
 
 * Filtering by gender
 
-<img src="" width="500"> 
+<img src="./images/filter.png" width="500"> 
