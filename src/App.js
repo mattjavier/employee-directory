@@ -3,9 +3,9 @@ import axios from 'axios'
 import 'react-table-v6/react-table.css'
 import ReactTable from 'react-table-v6'
 
-
 const App = () => {
 
+  // set state variables
   const [employeeState, setEmployeeState] = useState({
     employees: [],
     columns: [
@@ -51,10 +51,12 @@ const App = () => {
     ]
   })
 
+  // create table at launch
   useEffect(() => {
     axios.get('https://randomuser.me/api?results=20')
       .then(({ data }) => {
 
+        // map array so that ReactTable can use accessors
         let employees = data.results.map(employee => ({
           first: employee.name.first,
           last: employee.name.last,
