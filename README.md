@@ -6,7 +6,7 @@ It was built using React, along with the npm [React Table](https://www.npmjs.com
 
 ## Testing 
 
-The application is deployed [here](). 
+The application is deployed [here](https://mattjavier.github.io/employee-directory/). 
 
 Users are presented with a table that shows a number of employees. Each employee's first and last name, email, gender, city, state, and country is provided as columns of the table. A user can sort each column, with the exception of the `Gender` column. To sort, click the header for the chosen column. The application initially has all columns unsorted. By clicking a header, the table will be first sorted in ascending order, alphabetically, and clicking again will sort the table according to that column in descending order. 
 
